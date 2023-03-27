@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import bg1 from "./assets/bg1.jpeg";
+import bg2 from "./assets/bg2.jpeg";
+import bg3 from "./assets/bg3.jpeg";
+import Hero from "./components/Hero";
+import Slider from "./components/Slider";
+import Navbar from "./components/Navbar";
+
+
+
 
 function App() {
+  const navbarLinks = [
+    {url: "#", title: "Home"},
+    {url: "#", title: "Trip"},
+    {url: "#", title: "Reward"},
+  ];
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar navbarLinks= {navbarLinks} />
+      <Hero imageSrc={bg1} />
+        <Slider 
+           imageSrc={bg2} 
+           title={"Be an explorer.."} 
+           subtitle={"explore and conquer the world.."}
+         />
+        <Slider
+           imageSrc={bg3} 
+           title={"Memories for life..."} 
+           subtitle={"dream vacations are waiting for you..."}
+           flipped={true}
+         />
     </div>
   );
 }
